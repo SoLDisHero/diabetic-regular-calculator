@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Regular&Diabetic Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <div class="previous">0</div>
+            <div class="current">0</div>
+            <input class="mgdl" hidden id="first" autocomplete="off">
+            <input class="mmol" hidden id="second" autocomplete="off"/>
+            <h6 class="textMgdl" hidden>mg/dl</h6>
+            <h6 class="textMmol" hidden>mmol/L</h6>
+        </div>
+        <div class="set">
+            <div class="button operation">%</div>
+            <div class="button clear">Clear</div>
+            <div class="button clear-entrance">CE</div>
+            <div class="button operation">/</div>
+            <div class="button number">7</div>
+            <div class="button number">8</div>
+            <div class="button number">9</div>
+            <div class="button operation">*</div>
+            <div class="button number">4</div>
+            <div class="button number">5</div>
+            <div class="button number">6</div>
+            <div class="button operation">-</div>
+            <div class="button number">1</div>
+            <div class="button number">2</div>
+            <div class="button number">3</div>
+            <div class="button operation">+</div>
+            <div class="button diabetic">Diabet</div>
+            <div class="button number">0</div>
+            <div class="button number dot">.</div>
+            <div class="button equal">=</div>
+            <div class="button hidden" id="btn">=</div>
+        </div>        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

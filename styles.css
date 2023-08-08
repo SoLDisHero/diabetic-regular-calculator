@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background: linear-gradient(to right, #1d249f, #218548);    
+}
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+}
+.set{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows:repeat(5, 100px);
+    position: relative;
+}
+.button{
+    cursor: pointer;
+    color: whitesmoke;
+    outline: none;
+    border: 1px solid white;
+    font-size: 1.5rem;
+    background-color: rgb(48, 47, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover{
+    background-color: rgba(48, 47, 52, 0.75);
+}
+.button:active{
+    background-color: rgba(48, 47, 52, 0.1);
+}
+.active{
+    background-color: rgba(48, 47, 52, 0.1);
+}
+.screen{
+    background-color: rgb(176, 205,176);
+    grid-column: 1/-1;
+    min-height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0.3rem;
+    word-break:break-all;
+    word-wrap: break-word; 
+    font-size: 2.5rem;   
+    position: relative;
+}
+.previous{
+    color:rgb(125, 145, 125);
+    font-size: 1.4rem;
+}
+.diabetic{
+    background-color: rgb(54, 47, 82);
+}
+.disableButtons{
+    cursor: not-allowed;
+    background-color: rgba(48, 47, 52, 0.8);
+    color:transparent;
+}
+.mgdl{
+    position: absolute;
+    top:50px;
+    right:225px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    max-width:30%;
+    background-color: rgb(176, 205,176);
+    border-bottom: 1px solid black;
+}
+.mmol{
+    position: absolute;
+    top:50px;
+    right:35px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    max-width:30%;
+    background-color: rgb(176, 205,176);
+    border-bottom: 1px solid black;
+}
+.textMgdl{
+    position: absolute;
+    top:10px;
+    right:273px;
+}
+.textMmol{
+    position: absolute;
+    top:10px;
+    right:60px;
+}
+.hidden{
+    display: none;
+}
+#btn{
+    background-color: red;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top:400px;
+    left:300px;
+}
