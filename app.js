@@ -254,18 +254,3 @@ function toggleClass(key){
         }        
     })
 };
-
-
-
-// numbers.forEach(number => {
-//     number.addEventListener("click", (e) => {
-//         // Determine the currently focused field
-//         let currentField = document.activeElement;
-        
-//         if (currentField === mgdl || currentField === mmol) {
-//             // If the current field is mgdl or mmol, append the number
-//             if(e.target.innerText === "." && currentField.value.includes(".")) return
-//             currentField.value += e.target.innerText;
-//         }
-//     })
-// });

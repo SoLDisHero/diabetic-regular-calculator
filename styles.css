@@ -91,12 +91,12 @@ body{
 .textMgdl{
     position: absolute;
     top:10px;
-    right:273px;
+    right:253px;
 }
 .textMmol{
     position: absolute;
     top:10px;
-    right:60px;
+    right:50px;
 }
 .hidden{
     display: none;
@@ -109,7 +109,7 @@ body{
     left:300px;
 }
 :focus-visible{
-    border-bottom: 3px solid black;
+    border-bottom: 4px solid black;
 }
 @media only screen and (max-width: 768px){
     .calculator{
@@ -153,6 +153,6 @@ body{
     }
     .textMmol{
         top:10px;
-        right:60px;
+        right:55px;
     }
 }
