@@ -75,6 +75,7 @@ equal.addEventListener("click", (e) => {
     displayPrevious.innerText += " = " + sum;
     numberCurrent = sum;
     numberPrevious = ""; 
+       
 });
 
 clear.addEventListener("click", (e) => {
@@ -87,8 +88,8 @@ clear.addEventListener("click", (e) => {
     if(isDiabetic){
     mgdl.value = "";
     mmol.value = "";
-    firstNumber = mgdl.value;
-    secondNumber = mmol.value;
+    first.value = "";
+    second.value = "";
     }
 });
 
@@ -99,36 +100,46 @@ clearLast.addEventListener("click", (e) => {
 
 //diabetic calc
 
-mgdl.addEventListener("focus", (e) => {
+mgdl.addEventListener("focus", () => {
+    let currentValue = "";
+
     numbers.forEach(number => {
-        number.addEventListener("click", (e) => {  
-            if(e.target.innerText === "." && mgdl.value.includes(".")) return
-            mgdl.value += e.target.innerText;
-        })
-    })
-})
-mmol.addEventListener("focus", (e) => {
+        number.addEventListener("click", (e) => {
+            if (e.target.innerText === "." && currentValue.includes(".")) return;
+            currentValue += e.target.innerText;
+            mgdl.value = currentValue;
+            mmol.value = "";
+        });
+        
+    });
+});
+mmol.addEventListener("focus", () => {
+    let currentValue = "";
     numbers.forEach(number => {
-        number.addEventListener("click", (e) => { 
-            if(e.target.innerText === "." && mmol.value.includes(".")) return
-            mmol.value += e.target.innerText;
-        })
-    })
-})
+        number.addEventListener("click", (e) => {
+            if (e.target.innerText === "." && currentValue.includes(".")) return;
+            currentValue += e.target.innerText;
+            mmol.value = currentValue;
+            mgdl.value = "";
+        });
+        
+    });
+});
 
 btn.addEventListener("click", (e) => {    
     firstNumber = mmolToMgdl();
     secondNumber = mgdlToMmol();
-    // clear.click();
     mmol.value = secondNumber;
     mgdl.value = firstNumber;
 });
 
-mgdl.addEventListener("click", () => {
+mgdl.addEventListener("focus", () => {
     mgdl.value = "";
+    clear.click();
 });
-mmol.addEventListener("click", () => {
+mmol.addEventListener("focus", () => {
     mmol.value = "";
+    clear.click();
 });
 
 diabetButton.addEventListener("click", (e) => {
@@ -161,12 +172,12 @@ function mgdlToMmol(){
     const mgdlToMmolNumber = parseFloat(+mgdl.value) * 0.0555;
     return mgdlToMmolNumber;
 }
-function mmolToMgdl(){    
+function mmolToMgdl(){
     const mmolToMgdlNumber = parseFloat(+mmol.value) * 18;
     return mmolToMgdlNumber;
 }
 
-//keybord handling
+//keybord handlening
 
 window.addEventListener("keydown", (e) => {
     e.preventDefault();
@@ -198,8 +209,10 @@ window.addEventListener("keydown", (e) => {
     }else if(
         e.key === "Enter" || e.key === "="
     ){
-        if(isDiabetic){            
-            btn.click();            
+        if(isDiabetic){
+            
+            btn.click();
+            
         }        
         equal.click();
         toggleClass("=");
