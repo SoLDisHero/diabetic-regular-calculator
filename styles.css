@@ -102,7 +102,6 @@ body{
     display: none;
 }
 #btn{
-    background-color: red;
     position: absolute;
     height: 100px;
     width: 100px;
@@ -111,4 +110,49 @@ body{
 }
 :focus-visible{
     border-bottom: 3px solid black;
+}
+@media only screen and (max-width: 768px){
+    .calculator{
+        grid-template-columns: repeat(4, 80px);
+    }
+    .set{
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows:repeat(5, 80px);
+    }
+    .button{
+        font-size: 1.3rem;
+    }
+    .screen{
+        font-size: 2.1rem;  
+    }
+    .previous{
+        font-size: 1.3rem;
+    }
+    #btn{
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        top:320px;
+        left:240px;
+    }
+    .mgdl{        
+        top:50px;
+        right:200px;
+        font-size: 1.5rem;
+        max-width:30%;
+    }
+    .mmol{
+        top:50px;
+        right:45px;
+        font-size: 1.5rem;
+        max-width:30%;
+    }
+    .textMgdl{
+        top:10px;
+        right:217px;
+    }
+    .textMmol{
+        top:10px;
+        right:60px;
+    }
 }

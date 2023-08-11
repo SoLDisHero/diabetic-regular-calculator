@@ -21,7 +21,7 @@ let isDiabetic = false;
 let firstNumber = mgdl.value;
 let secondNumber = mmol.value;
 
-numbers.forEach(number => {
+numbers.forEach(number => {        
     number.addEventListener("click", (e) => {
         if(e.target.innerText === "." && numberCurrent.includes(".")) return
         numberCurrent += e.target.innerText;
@@ -75,7 +75,6 @@ equal.addEventListener("click", (e) => {
     displayPrevious.innerText += " = " + sum;
     numberCurrent = sum;
     numberPrevious = ""; 
-       
 });
 
 clear.addEventListener("click", (e) => {
